@@ -49,11 +49,11 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 2. Giới Thiệu */}
-      <section className="max-w-[1240px] mx-auto py-32 px-12">
-        <h2 className="text-[70px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-14 uppercase leading-none tracking-tight">
+      <section className="max-w-[1240px] mx-auto py-16 md:py-32 px-6 md:px-12">
+        <h2 className="text-[36px] md:text-[70px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-8 md:mb-14 uppercase leading-none tracking-tight">
           GIỚI THIỆU
         </h2>
-        <div className="max-w-[900px] text-[#212529] font-['Quicksand'] text-[25px] leading-[1.35] font-medium">
+        <div className="max-w-[900px] text-[#212529] font-['Quicksand'] text-[18px] md:text-[25px] leading-[1.35] font-medium">
           <p>
             <span className="font-bold">TGC</span> là thương hiệu áo sơ mi cao cấp dành cho những người đàn ông thành đạt, những người theo đuổi sự hoàn hảo trong phong cách sống và công việc. Sản phẩm của chúng tôi khác biệt nhờ công nghệ cổ áo đứng phom độc quyền, giúp người mặc luôn giữ được phong thái chỉn chu và tự tin tuyệt đối, không chỉ là một món đồ thời trang mà còn là một biểu tượng của sự đẳng cấp.
           </p>
@@ -61,8 +61,8 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 3. Quote Section - "Chúng tôi mang đến..." */}
-      <section className="max-w-[1240px] mx-auto px-6 py-20">
-        <div className="flex flex-col items-center mb-16">
+      <section className="max-w-[1240px] mx-auto px-6 py-12 md:py-20">
+        <div className="flex flex-col items-center mb-10 md:mb-16">
             <div className="text-[#002D58] text-[40px] mb-4 text-center">
                 <i className="fa-solid fa-quote-left"></i>
             </div>
@@ -114,37 +114,37 @@ const AboutPage = ({ onNavigate }) => {
                 <p><span className="font-bold ">Chỉn Chu:</span> Sự tỉ mỉ, cẩn trọng trong từng chi tiết là kim chỉ nam cho mọi hoạt động, từ khâu thiết kế, sản xuất đến trải nghiệm khách hàng.</p>
              </div>
              <div className="mt-12 flex justify-center">
-                 <img src={about3} alt="Core Values" className="w-[600px] h-auto rounded-xl shadow-2xl" />
+                 <img src={about3} alt="Core Values" className="w-full max-w-[600px] h-auto rounded-xl shadow-2xl" />
              </div>
         </div>
       </section>
 
       {/* 4. Product Concept Sections */}
-      <section className="bg-[#E9ECEF] py-24">
-        <div className="max-w-[1240px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-start">
+      <section className="bg-[#E9ECEF] py-12 md:py-24">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Left Column */}
-            <div className="flex flex-col gap-12">
-                <div className="w-full aspect-[1.4/1] bg-white rounded-[40px] border border-gray-300 overflow-hidden">
+            <div className="flex flex-col gap-8 md:gap-12">
+                <div className="w-full aspect-[1.4/1] bg-white rounded-[20px] md:rounded-[40px] border border-gray-300 overflow-hidden">
                     <img src={collarDetail} alt="Collar Detail" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-[24px] font-bold text-[#002D58] font-['Quicksand'] max-w-[400px] leading-tight">
+                <h3 className="text-[20px] md:text-[24px] font-bold text-[#002D58] font-['Quicksand'] max-w-[400px] leading-tight">
                     Cổ áo TgC – Biểu tượng của sự chỉn chu, phong độ và đẳng cấp
                 </h3>
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-8 md:gap-12">
                 <div className="space-y-6">
-                    <h3 className="text-[24px] font-bold text-[#002D58] font-['Quicksand']">
+                    <h3 className="text-[20px] md:text-[24px] font-bold text-[#002D58] font-['Quicksand']">
                         Một chiếc áo TgC không đơn thuần là thời trang
                     </h3>
-                    <ul className="space-y-2 font-['Quicksand'] text-[#001D38] text-[20px]">
+                    <ul className="space-y-2 font-['Quicksand'] text-[#001D38] text-[16px] md:text-[20px]">
                         <li>+ Nó là tuyên ngôn</li>
                         <li>+ Là phong độ</li>
                         <li>+ Là cảm giác sang trọng lướt qua da thịt ngay khi bạn khoác lên mình</li>
                     </ul>
                 </div>
-                <div className="w-full aspect-[1.6/1] bg-white rounded-[50px] border border-gray-300 overflow-hidden">
+                <div className="w-full aspect-[1.6/1] bg-white rounded-[30px] md:rounded-[50px] border border-gray-300 overflow-hidden">
                     <img src={mainImage} alt="Cuff Detail" className="w-full h-full object-cover" />
                 </div>
             </div>
@@ -152,10 +152,10 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 5. Tuyên Ngôn Của Tác Giả */}
-      <section className="py-24 max-w-[1240px] mx-auto px-6">
-        <h2 className="text-center text-[36px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-20 uppercase tracking-widest">Tuyên ngôn của tác giả</h2>
+      <section className="py-12 md:py-24 max-w-[1240px] mx-auto px-6">
+        <h2 className="text-center text-[28px] md:text-[36px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-10 md:mb-20 uppercase tracking-widest">Tuyên ngôn của tác giả</h2>
         
-        <div className="grid md:grid-cols-2 gap-12 mb-8 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 items-center">
             <div className="relative">
                  <div className="absolute inset-0 bg-[#001529] translate-x-6 translate-y-6 rounded-3xl"></div>
                  <img src={mrTuanImg} alt="Mr. Tuan" className="relative w-full h-auto rounded-3xl object-cover" />
@@ -191,18 +191,18 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 6. Customer Reviews Section */}
-      <section className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-[1240px] mx-auto px-6">
-            <h2 className="text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider mb-16 text-center">
+      <section className="bg-white py-12 md:py-24 border-t border-gray-100">
+        <div className="max-w-[1240px] mx-auto px-0 md:px-6">
+            <h2 className="text-xl md:text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider mb-8 md:mb-16 text-center">
                 SỰ ĐÓN NHẬN ĐẦY YÊU THƯƠNG CỦA KHÁCH HÀNG
             </h2>
 
-            <div className="flex flex-col gap-14 max-w-[1100px] mx-auto text-black px-4 md:px-12">
+            <div className="flex flex-col gap-8 md:gap-14 max-w-[1100px] mx-auto text-black px-0 md:px-12">
                 {reviews.map((review, idx) => (
                     <div key={idx} className="relative group">
-                        <div className="absolute inset-0 bg-[#001529] rounded-[40px] translate-x-[15px] translate-y-[15px] transition-transform group-hover:translate-x-[18px] group-hover:translate-y-[18px]"></div>
-                        <div className={`relative bg-white border border-black rounded-[40px] flex justify-between items-start transition-colors group-hover:bg-[#F9FBFF] ${review.extraPadding ? 'p-16 min-h-[220px]' : 'p-8'}`}>
-                            <div>
+                         <div className="absolute inset-0 bg-[#001529] rounded-[20px] md:rounded-[40px] translate-x-[10px] md:translate-x-[15px] translate-y-[10px] md:translate-y-[15px] transition-transform group-hover:translate-x-[12px] md:group-hover:translate-x-[18px] group-hover:translate-y-[12px] md:group-hover:translate-y-[18px]"></div>
+                        <div className={`relative bg-white border border-black rounded-[20px] md:rounded-[40px] flex flex-col md:flex-row justify-between items-start transition-colors group-hover:bg-[#F9FBFF] ${review.extraPadding ? 'p-6 md:p-16 min-h-[auto] md:min-h-[220px]' : 'p-6 md:p-8'}`}>
+                            <div className="mb-4 md:mb-0">
                                 <p className="font-bold text-[18px] mb-2 font-['Quicksand']">{review.name}</p>
                                 <p className="text-[17px] italic font-['Quicksand'] text-[#333333]">{review.comment}</p>
                             </div>
@@ -216,10 +216,10 @@ const AboutPage = ({ onNavigate }) => {
                 ))}
             </div>
 
-            <div className="mt-24 flex justify-center">
+            <div className="mt-12 md:mt-24 flex justify-center">
                 <button className="relative group">
                     <div className="absolute inset-0 bg-[#001529] rounded-[30px] translate-x-1 translate-y-1 group-active:translate-x-0 group-active:translate-y-0 transition-transform"></div>
-                    <div className="relative bg-[#F0F2F5] text-[#002D58] font-bold py-4 px-14 rounded-[30px] border border-[#002D58] hover:bg-white transition-all group-active:translate-x-0.5 group-active:translate-y-0.5 font-['Quicksand'] text-[18px]">
+                    <div className="relative bg-[#F0F2F5] text-[#002D58] font-bold py-4 px-8 md:px-14 rounded-[30px] border border-[#002D58] hover:bg-white transition-all group-active:translate-x-0.5 group-active:translate-y-0.5 font-['Quicksand'] text-[18px]">
                         Xem thêm
                     </div>
                 </button>
@@ -228,8 +228,8 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 7. FAQ Section */}
-      <section className="py-24 max-w-[1000px] mx-auto px-6">
-        <h2 className="text-center text-[28px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-16 uppercase tracking-widest">Những câu hỏi thường gặp</h2>
+      <section className="py-12 md:py-24 max-w-[1000px] mx-auto px-6">
+        <h2 className="text-center text-xl md:text-[28px] font-['Cormorant_Garamond'] font-bold text-[#002D58] mb-10 md:mb-16 uppercase tracking-widest">Những câu hỏi thường gặp</h2>
         <div className="space-y-2">
             {faqs.map((faq, idx) => (
                 <div key={idx} className="border-b border-gray-200">
@@ -251,37 +251,37 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 8. Contact Section */}
-      <section className="bg-[#001529] text-white py-24 px-6 border-b border-white/10">
+      <section className="bg-[#001529] text-white py-12 md:py-24 px-6 border-b border-white/10">
         <div className="max-w-[1240px] mx-auto">
-            <div className="space-y-12">
-                <h3 className="text-[44px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wider mb-20">Liên hệ với chúng tôi</h3>
+            <div className="space-y-8 md:space-y-12">
+                <h3 className="text-[32px] md:text-[44px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wider mb-10 md:mb-20">Liên hệ với chúng tôi</h3>
                 
-                <div className="space-y-12">
+                <div className="space-y-8 md:space-y-12">
                     {/* Phone */}
-                    <div className="flex items-center gap-8">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
                         <div className="relative">
                             <div className="absolute inset-0 bg-[#0088FF] translate-x-1.5 translate-y-1.5 rounded-sm"></div>
-                            <div className="relative w-20 h-20 bg-white flex items-center justify-center rounded-sm shadow-sm">
-                                <span className="material-symbols-outlined text-[#001529] text-[40px] font-bold">phone_enabled</span>
+                            <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white flex items-center justify-center rounded-sm shadow-sm">
+                                <span className="material-symbols-outlined text-[#001529] text-[32px] md:text-[40px] font-bold">phone_enabled</span>
                             </div>
                         </div>
                         <div className="space-y-2 font-['Quicksand']">
-                            <p className="font-bold text-[22px] leading-none text-white">Điện thoại</p>
-                            <p className="text-[19px] text-white">0975 035 688</p>
+                            <p className="font-bold text-[18px] md:text-[22px] leading-none text-white">Điện thoại</p>
+                            <p className="text-[16px] md:text-[19px] text-white">0975 035 688</p>
                         </div>
                     </div>
 
                     {/* Email */}
-                    <div className="flex items-center gap-8">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
                         <div className="relative">
                             <div className="absolute inset-0 bg-[#0088FF] translate-x-1.5 translate-y-1.5 rounded-sm"></div>
-                            <div className="relative w-20 h-20 bg-white flex items-center justify-center rounded-sm shadow-sm">
-                                <span className="material-symbols-outlined text-[#001529] text-[40px] font-bold">mail</span>
+                            <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white flex items-center justify-center rounded-sm shadow-sm">
+                                <span className="material-symbols-outlined text-[#001529] text-[32px] md:text-[40px] font-bold">mail</span>
                             </div>
                         </div>
                         <div className="space-y-2 font-['Quicksand']">
-                            <p className="font-bold text-[22px] leading-none text-white">Hòm thư góp ý</p>
-                            <p className="text-[19px] text-white">tgc.ctcp@gmail.com</p>
+                            <p className="font-bold text-[18px] md:text-[22px] leading-none text-white">Hòm thư góp ý</p>
+                            <p className="text-[16px] md:text-[19px] text-white">tgc.ctcp@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -290,9 +290,9 @@ const AboutPage = ({ onNavigate }) => {
       </section>
 
       {/* 9. Message Form Section */}
-      <section className="bg-[#F4F7F9] py-24 px-6">
+      <section className="bg-[#F4F7F9] py-12 md:py-24 px-6">
         <div className="max-w-[1000px] mx-auto">
-            <h3 className="text-[36px] font-['Cormorant_Garamond'] font-bold text-center uppercase mb-16 tracking-widest text-[#002D58]">
+            <h3 className="text-[28px] md:text-[36px] font-['Cormorant_Garamond'] font-bold text-center uppercase mb-10 md:mb-16 tracking-widest text-[#002D58]">
                 HÃY ĐỂ LẠI LỜI NHẮN CỦA BẠN!
             </h3>
             

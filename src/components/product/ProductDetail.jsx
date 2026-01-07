@@ -69,15 +69,15 @@ const ProductDetail = () => {
 
     return (
         <>
-            <div className="container mx-auto px-4 pt-16 pb-0 max-w-[1240px]">
-                <div className="flex flex-col lg:flex-row gap-[60px] mb-16">
+            <div className="container mx-auto px-4 pt-10 md:pt-16 pb-0 max-w-[1240px]">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-[60px] mb-8 lg:mb-16">
                 {/* LEFT COLUMN */}
-                <div className="lg:w-[480px] shrink-0">
+                <div className="lg:w-[480px] shrink-0 w-full">
                     {/* Tabs */}
-                    <div className="flex gap-12 mb-10">
+                    <div className="flex gap-8 md:gap-12 mb-6 md:mb-10">
                         <button
                             onClick={() => setActiveTab('shirt')}
-                            className={`pb-1 text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'shirt' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
+                            className={`pb-1 text-[24px] md:text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'shirt' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
                                 }`}
                         >
                             ÁO SƠ MI
@@ -87,7 +87,7 @@ const ProductDetail = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('collar')}
-                            className={`pb-1 text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'collar' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
+                            className={`pb-1 text-[24px] md:text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'collar' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
                                 }`}
                         >
                             CỔ ÁO
@@ -113,9 +113,9 @@ const ProductDetail = () => {
                             <span className="material-symbols-outlined text-[40px] font-bold">chevron_left</span>
                         </button>
 
-                        <div className="flex gap-4 w-full">
+                        <div className="flex gap-4 w-full overflow-x-auto no-scrollbar">
                             {data.thumbnails.map((img, idx) => (
-                                <div key={idx} className="w-[100px] h-[100px] border border-[#CCD8E0] shrink-0 bg-white">
+                                <div key={idx} className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] border border-[#CCD8E0] shrink-0 bg-white">
                                     <img src={img} alt="" className="w-full h-full object-cover" />
                                 </div>
                             ))}
@@ -131,9 +131,9 @@ const ProductDetail = () => {
                 {/* RIGHT COLUMN */}
                 <div className="flex-1">
                     {/* Top Small Detail Images - Pushed down to align with top of Main Photo */}
-                    <div className="flex gap-10 mb-12 mt-[88px]">
+                    <div className="flex gap-4 md:gap-10 mb-8 md:mb-12 mt-4 lg:mt-[88px] overflow-x-auto pb-2">
                         {data.detailImages.map((img, idx) => (
-                            <div key={idx} className="w-[180px] h-[240px] border-2 border-[#88D1FF] shadow-[0_4px_10px_rgba(0,0,0,0.15)] bg-white p-[2px]">
+                            <div key={idx} className="w-[120px] h-[160px] md:w-[180px] md:h-[240px] border-2 border-[#88D1FF] shadow-[0_4px_10px_rgba(0,0,0,0.15)] bg-white p-[2px] shrink-0">
                                 <img src={img} alt="" className="w-full h-full object-cover" />
                             </div>
                         ))}
@@ -202,26 +202,26 @@ const ProductDetail = () => {
             </div>
 
             {/* DESCRIPTION ACCORDION SECTION */}
-            <div className="mt-32 border-t border-gray-100 pt-8">
+            <div className="mt-16 md:mt-32 border-t border-gray-100 pt-8">
                 <div
                     onClick={() => setIsDescOpen(!isDescOpen)}
                     className="flex justify-between items-center cursor-pointer group px-4"
                 >
-                    <span className="text-[32px] font-bold text-[#333333] font-['Cormorant_Garamond']">
+                    <span className="text-[24px] md:text-[32px] font-bold text-[#333333] font-['Cormorant_Garamond']">
                         Mô tả
                     </span>
-                    <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all shadow-md ${isDescOpen ? 'bg-[#001529] text-white' : 'bg-white text-[#001529] border border-gray-200'}`}>
-                        <span className="material-symbols-outlined text-[32px] font-bold">
+                    <div className={`w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all shadow-md ${isDescOpen ? 'bg-[#001529] text-white' : 'bg-white text-[#001529] border border-gray-200'}`}>
+                        <span className="material-symbols-outlined text-[24px] md:text-[32px] font-bold">
                             {isDescOpen ? 'remove' : 'add'}
                         </span>
                     </div>
                 </div>
 
                 {isDescOpen && (
-                    <div className="mt-12 bg-white rounded-[40px] shadow-[0_4px_30px_rgba(0,0,0,0.08)] border border-black p-12 animate-in fade-in slide-in-from-top-4 duration-500">
+                    <div className="mt-8 md:mt-12 bg-white rounded-[20px] md:rounded-[40px] shadow-[0_4px_30px_rgba(0,0,0,0.08)] border border-black p-6 md:p-12 animate-in fade-in slide-in-from-top-4 duration-500">
                         {activeTab === 'shirt' ? (
                             <div className="max-w-[1000px] mx-auto">
-                                <h2 className="text-center text-[24px] md:text-[28px] font-bold font-['Cormorant_Garamond'] text-black mb-12 uppercase">
+                                <h2 className="text-center text-[20px] md:text-[28px] font-bold font-['Cormorant_Garamond'] text-black mb-8 md:mb-12 uppercase">
                                     SƠ MI CỔ ÁO SÁNG CHẾ TgC – DẤU ÁN CỦA PHONG CÁCH VÀ ĐẲNG CẤP
                                 </h2>
 
@@ -243,7 +243,7 @@ const ProductDetail = () => {
 
                                 <div className="space-y-16 flex flex-col items-center">
                                     <div className="w-full flex justify-center">
-                                        <img src={des1} alt="Full Shirt" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={des1} alt="Full Shirt" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
 
                                     <div className="w-full">
@@ -251,7 +251,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Phom dáng chuẩn Quốc tế:</span> Tỉ lệ hoàn hảo, tôn dáng người mặc, mang lại vẻ ngoài tự tin và khí chất sang trọng trong mọi hoàn cảnh.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des2} alt="Collar" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={des2} alt="Collar" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
 
@@ -260,7 +260,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Chất liệu cao cấp:</span> Vải mềm mại, co giãn nhẹ, thoáng khí, thấm hút mồ hôi tốt – giúp bạn luôn thoải mái, chỉn chu suốt ngày dài.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des3} alt="Fabric" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={des3} alt="Fabric" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
 
@@ -269,7 +269,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Từng đường kim mũi chỉ tinh xảo:</span> Gia công tỉ mỉ đến từng chi tiết, thể hiện tay nghề và tiêu chuẩn hoàn mỹ của thương hiệu TgC.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des4} alt="Cuff" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={des4} alt="Cuff" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
                                 </div>
@@ -316,16 +316,16 @@ const ProductDetail = () => {
                                 <p className="text-[16px] mb-12">
                                     Điểm nhấn độc quyền của chiếc sơ mi TgC nằm ở cấu trúc cổ áo sáng chế, được nghiên cứu kỹ lưỡng để giữ dáng chuẩn trong mọi tình huống.                </p>
 
-                                <div className="flex flex-col items-center gap-16">
+                                <div className="flex flex-col items-center gap-8 md:gap-16">
                                     <div className="w-full flex justify-center">
-                                        <img src={cdes1} alt="Collar Detail 1" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={cdes1} alt="Collar Detail 1" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
 
                                     <p className="text-[16px] leading-relaxed max-w-[800px]">
                                         Cổ áo được tích hợp vành nhựa định hình cùng hai miếng chống cong vênh, giúp cổ luôn thẳng, phẳng, không bị xô lệch dù mặc lâu hay di chuyển nhiều. Người mặc chỉ cần lồng vành nhựa vào cổ áo khi sử dụng và rút ra khi giặt – thao tác đơn giản nhưng mang lại hiệu quả giữ form tuyệt đối.                                    </p>
 
                                     <div className="w-full flex justify-center">
-                                        <img src={cdes2} alt="Collar Detail 2" className="w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={cdes2} alt="Collar Detail 2" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
                                 </div>
 

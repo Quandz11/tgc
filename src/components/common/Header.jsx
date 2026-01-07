@@ -15,10 +15,10 @@ const Header = ({ onNavigate }) => {
 
   return (
     <header className="bg-primary sticky top-0 z-50">
-      <div className="container mx-auto px-6 pt-4 pb-1 flex items-end">
+      <div className="container mx-auto px-4 md:px-6 pt-4 pb-1 flex items-center lg:items-end">
         {/* Logo */}
         <div className="flex items-center cursor-pointer" onClick={(e) => handleNavClick('home', e)}>
-             <img src={logo} alt="TGC Logo" className="h-24 w-auto" />
+             <img src={logo} alt="TGC Logo" className="h-16 md:h-20 lg:h-24 w-auto" />
         </div>
 
         {/* Desktop Nav */}
@@ -29,7 +29,7 @@ const Header = ({ onNavigate }) => {
         </nav>
 
         {/* Auth Buttons */}
-        <div className="hidden sm:flex items-center space-x-4 self-center">
+        <div className="hidden sm:flex ml-auto items-center space-x-4 self-center">
           <button className="bg-white text-primary px-5 py-2 rounded-[4px] text-[13px] font-bold hover:bg-gray-100 transition shadow-sm">
             Đăng nhập
           </button>
@@ -40,7 +40,7 @@ const Header = ({ onNavigate }) => {
 
         {/* Mobile Menu Button box*/}
         <button 
-          className="text-white lg:hidden border border-white/30 p-1 rounded"
+          className="text-white lg:hidden ml-auto sm:ml-4 border border-white/30 p-1 rounded"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="material-symbols-outlined">menu</span>

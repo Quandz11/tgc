@@ -38,19 +38,19 @@ const UserGuide = ({ activeTab }) => {
     const currentSteps = activeTab === 'shirt' ? shirtSteps : collarSteps;
 
     return (
-        <div className="mt-24 border-t border-gray-100 pt-8">
-            <div className="mb-12">
-                <h2 className="text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider">
+        <div className="mt-12 md:mt-24 border-t border-gray-100 pt-8">
+            <div className="mb-6 md:mb-12">
+                <h2 className="text-xl md:text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider">
                     Hướng dẫn sử dụng
                 </h2>
             </div>
 
-            <div className="flex gap-10 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory h-auto px-4 md:px-0">
+            <div className="flex gap-4 md:gap-10 overflow-x-auto pb-6 md:pb-12 no-scrollbar snap-x snap-mandatory h-auto px-4 md:px-0">
                 {currentSteps.map((step, idx) => (
-                    <div key={idx} className="min-w-full md:min-w-[595px] h-[320px] rounded-[30px] overflow-hidden snap-center transition-all duration-500 shadow-2xl shrink-0 relative group">
+                    <div key={idx} className="min-w-[85vw] md:min-w-[595px] h-[250px] md:h-[320px] rounded-[20px] md:rounded-[30px] overflow-hidden snap-center transition-all duration-500 shadow-xl md:shadow-2xl shrink-0 relative group">
                         {/* Step Number Overlay */}
-                        <div className="absolute top-6 right-8 z-10">
-                            <span className="text-red-600 font-black text-[32px] drop-shadow-md">
+                        <div className="absolute top-4 right-4 md:top-6 md:right-8 z-10">
+                            <span className="text-red-600 font-black text-[24px] md:text-[32px] drop-shadow-md">
                                 {step.id}
                             </span>
                         </div>

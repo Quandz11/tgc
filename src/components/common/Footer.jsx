@@ -4,8 +4,8 @@ import logo from '../../assets/logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary pt-16 pb-12 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <footer className="bg-primary pt-10 pb-8 md:pt-16 md:pb-12 px-4 md:px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {/* Company Info */}
         <div className="space-y-8">
           <div className="flex flex-col items-start gap-4">
