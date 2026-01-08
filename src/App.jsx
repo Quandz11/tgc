@@ -22,12 +22,17 @@ function App() {
   // Simple state-based navigation
   const [currentPage, setCurrentPage] = React.useState('home');
 
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'product':
         return <ProductPage />;
       case 'about':
-        return <AboutPage onNavigate={setCurrentPage} />;
+        return <AboutPage onNavigate={handleNavigate} />;
       case 'home':
       default:
         return <HomePage />;
@@ -36,7 +41,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
-      <Header onNavigate={setCurrentPage} />
+      <Header onNavigate={handleNavigate} />
       {renderPage()}
       <Footer />
       <BackToTop />

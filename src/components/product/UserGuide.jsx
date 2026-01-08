@@ -70,12 +70,36 @@ const UserGuide = ({ activeTab }) => {
         sliderRef.current.scrollLeft = scrollLeft - walk;
     };
 
+    const scroll = (direction) => {
+        if (sliderRef.current) {
+            const scrollAmount = direction === 'left' ? -400 : 400;
+            sliderRef.current.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <div className="mt-12 md:mt-24 border-t border-gray-100 pt-8">
-            <div className="mb-6 md:mb-12">
+            <div className="mb-6 md:mb-12 flex items-center justify-between px-4 md:px-0">
                 <h2 className="text-xl md:text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider">
                     Hướng dẫn sử dụng
                 </h2>
+                <div className="flex gap-2 md:gap-4">
+                    <button 
+                        onClick={() => scroll('left')}
+                        className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#002D58] text-[#002D58] flex items-center justify-center hover:bg-[#002D58] hover:text-white transition-colors"
+                    >
+                        <span className="material-symbols-outlined text-xl md:text-2xl">chevron_left</span>
+                    </button>
+                    <button 
+                        onClick={() => scroll('right')}
+                        className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#002D58] text-[#002D58] flex items-center justify-center hover:bg-[#002D58] hover:text-white transition-colors"
+                    >
+                        <span className="material-symbols-outlined text-xl md:text-2xl">chevron_right</span>
+                    </button>
+                </div>
             </div>
 
             <div 
