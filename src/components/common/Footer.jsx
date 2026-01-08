@@ -24,7 +24,7 @@ const Footer = () => {
         
         {/* Policies */}
         <div className="pt-2">
-           <h4 className="font-['Cormorant_Garamond'] text-white font-serif text-lg mb-6 uppercase tracking-wider font-normal">CHÍNH SÁCH &amp; ĐIỀU KHOẢN</h4>
+           <h4 className="text-white text-[20px] font-['Cormorant_Garamond'] uppercase tracking-normal leading-[100%] pb-4">CHÍNH SÁCH &amp; ĐIỀU KHOẢN</h4>
            <ul className="space-y-3 text-white text-sm font-light">
              <li><a className="font-['Quicksand'] hover:text-secondary transition" href="#">Bảo mật</a></li>
              <li><a className="font-['Quicksand'] hover:text-secondary transition" href="#">Chăm sóc khách hàng</a></li>
@@ -35,7 +35,7 @@ const Footer = () => {
         {/* Connect & BCT */}
         <div className="lg:col-span-1 flex flex-col items-start lg:items-end space-y-8 pt-2">
           <div className="w-full lg:text-right">
-            <h4 className="font-['Cormorant_Garamond'] text-white font-serif text-lg mb-6 uppercase tracking-wider font-normal">KẾT NỐI VỚI CHÚNG TÔI</h4>
+            <h4 className="text-white text-[20px] font-['Cormorant_Garamond'] uppercase tracking-normal leading-[100%] pb-4">KẾT NỐI VỚI CHÚNG TÔI</h4>
             <div className="flex gap-4 lg:justify-end">
               {/* Facebook Icon */}
               <a className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:text-secondary transition" href="#">
