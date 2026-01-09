@@ -3,15 +3,22 @@ import UserGuide from './UserGuide';
 import Reviews from './Reviews';
 import Membership from '../home/Membership';
 import mainImage from '../../assets/main-image.png';
+import mainImagek from '../../assets/main-k.png';
 import mainCollar from '../../assets/main-collar.png';
 import fullShirt from '../../assets/full-shirt.png';
+import fullShirtk from '../../assets/side-1.png';
 import fullCollar from '../../assets/full-collar.png';
 import collarDetail from '../../assets/collar.png';
+import collarDetailk from '../../assets/side-2.png';
 import collar2 from '../../assets/second-collar.png';
 import t1 from '../../assets/t1.png';
 import t2 from '../../assets/t2.png';
 import t3 from '../../assets/t3.png';
 import t4 from '../../assets/t4.png';
+import t1k from '../../assets/thum-1-k.png';
+import t2k from '../../assets/thum-2-k.png';
+import t3k from '../../assets/thum-3-k.png';
+import t4k from '../../assets/thum-4-k.png';
 import ct1 from '../../assets/collar-t1.png';
 import ct2 from '../../assets/collar-t2.png';
 import ct3 from '../../assets/collar-t3.png';
@@ -22,6 +29,7 @@ import des3 from '../../assets/des3.png';
 import des4 from '../../assets/des4.png';
 import cdes1 from '../../assets/c-des1.png';
 import cdes2 from '../../assets/c-des2.png';
+
 
 const productData = {
     shirt: {
@@ -39,7 +47,7 @@ const productData = {
             collarDetail
         ],
         thumbnails: [
-            t4, t3, t2, t1
+        t4, t3, t2, t1
         ]
     },
     collar: {
@@ -59,12 +67,31 @@ const productData = {
         thumbnails: [
             ct1, ct2, ct3, ct4
         ]
+    },
+    shirt_no_pocket: {
+        title: "SƠ MI CỔ ÁO SÁNG CHẾ TgC BẢN KHÔNG TÚI",
+        price: "150.000 VNĐ",
+        features: [
+            "Phom dáng chuẩn Quốc tế, tôn dáng người mặc.",
+            "Vải cao cấp mềm mại, co giãn, thoáng khí, ít nhăn, thấm hút mồ hôi.",
+            "Đường may mũi chỉ hoàn mỹ, tinh tế đến từng chi tiết."
+        ],
+        highlight: "Tổng thể tạo nên một chiếc áo sang trọng - hào hoa - lịch lãm, giúp Quý Ông khẳng định dấu ấn riêng biệt về tư duy, phong cách và đẳng cấp đỉnh cao.",
+        mainImage:  mainImagek,
+        detailImages: [
+            fullShirtk,
+            collarDetailk
+        ],
+        thumbnails: [
+            t4k, t3k, t2k, t1k
+        ]
     }
 };
 
 const ProductDetail = () => {
     const [activeTab, setActiveTab] = useState('shirt');
     const [isDescOpen, setIsDescOpen] = useState(false);
+    const [isShirtMenuOpen, setIsShirtMenuOpen] = useState(false);
     const data = productData[activeTab];
     const [currentImage, setCurrentImage] = useState(data.mainImage);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -78,21 +105,63 @@ const ProductDetail = () => {
             <div className="container mx-auto px-4 pt-10 md:pt-16 pb-0 max-w-[1240px]">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-[60px] mb-8 lg:mb-16">
                 {/* LEFT COLUMN */}
-                <div className="lg:w-[480px] shrink-0 w-full">
+                <div className="lg:w-[480px] shrink-0 w-full" onClick={() => setIsShirtMenuOpen(false)}>
                     {/* Tabs */}
-                    <div className="flex gap-8 md:gap-12 mb-6 md:mb-10">
-                        <button
-                            onClick={() => setActiveTab('shirt')}
-                            className={`pb-1 text-[24px] md:text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'shirt' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
-                                }`}
-                        >
-                            ÁO SƠ MI
-                            {activeTab === 'shirt' && (
-                                <div className="absolute bottom-[-4px] left-0 w-full h-[4px] bg-[#002D58]"></div>
+                    <div className="flex gap-8 md:gap-12 mb-6 md:mb-10 relative">
+                        <div className="relative">
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (!activeTab.startsWith('shirt')) {
+                                        setActiveTab('shirt');
+                                    }
+                                    setIsShirtMenuOpen(!isShirtMenuOpen);
+                                }}
+                                className={`pb-1 text-[24px] md:text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative flex items-center gap-2 ${activeTab.startsWith('shirt') ? 'text-[#002D58]' : 'text-[#A0A0A0]'}`}
+                            >
+                                ÁO SƠ MI
+                                <span className="material-symbols-outlined text-[20px] md:text-[24px]">
+                                    {isShirtMenuOpen ? 'arrow_drop_up' : 'arrow_drop_down'}
+                                </span>
+                                {activeTab.startsWith('shirt') && (
+                                    <div className="absolute bottom-[-4px] left-0 w-full h-[4px] bg-[#002D58]"></div>
+                                )}
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {isShirtMenuOpen && (
+                                <div className="absolute top-full left-0 z-20 mt-2 w-[320px] bg-white border border-[#EBEBEB] shadow-xl rounded-lg overflow-hidden animate-in fade-in slide-in-from-top-2">
+                                    <div 
+                                        onClick={() => {
+                                            setActiveTab('shirt');
+                                            setIsShirtMenuOpen(false);
+                                        }}
+                                        className={`px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors border-b border-gray-100 ${activeTab === 'shirt' ? 'bg-blue-50/50' : ''}`}
+                                    >
+                                        <div className={`font-['Quicksand'] text-[16px] font-semibold ${activeTab === 'shirt' ? 'text-[#002D58]' : 'text-[#333333]'}`}>
+                                            Sơ mi cổ áo sáng chế bản có túi
+                                        </div>
+                                    </div>
+                                    <div 
+                                        onClick={() => {
+                                            setActiveTab('shirt_no_pocket');
+                                            setIsShirtMenuOpen(false);
+                                        }}
+                                        className={`px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors ${activeTab === 'shirt_no_pocket' ? 'bg-blue-50/50' : ''}`}
+                                    >
+                                        <div className={`font-['Quicksand'] text-[16px] font-semibold ${activeTab === 'shirt_no_pocket' ? 'text-[#002D58]' : 'text-[#333333]'}`}>
+                                            Sơ mi cổ áo sáng chế bản không túi
+                                        </div>
+                                    </div>
+                                </div>
                             )}
-                        </button>
+                        </div>
+
                         <button
-                            onClick={() => setActiveTab('collar')}
+                            onClick={() => {
+                                setActiveTab('collar');
+                                setIsShirtMenuOpen(false);
+                            }}
                             className={`pb-1 text-[24px] md:text-[32px] font-['Cormorant_Garamond'] font-bold uppercase tracking-wide transition-colors relative ${activeTab === 'collar' ? 'text-[#002D58]' : 'text-[#A0A0A0]'
                                 }`}
                         >
@@ -111,7 +180,7 @@ const ProductDetail = () => {
                         <img
                             src={currentImage}
                             alt={data.title}
-                            className={`w-full h-full ${activeTab === 'shirt' ? 'object-cover' : 'object-contain'} transition-all duration-300`}
+                            className={`w-full h-full ${activeTab.startsWith('shirt') ? 'object-cover' : 'object-contain'} transition-all duration-300`}
                         />
                     </div>
 
@@ -238,7 +307,7 @@ const ProductDetail = () => {
 
                 {isDescOpen && (
                     <div className="mt-8 md:mt-12 bg-white rounded-[20px] md:rounded-[40px] shadow-[0_4px_30px_rgba(0,0,0,0.08)] border border-black p-6 md:p-12 animate-in fade-in slide-in-from-top-4 duration-500">
-                        {activeTab === 'shirt' ? (
+                        {activeTab.startsWith('shirt') ? (
                             <div className="max-w-[1000px] mx-auto">
                                 <h2 className="text-center text-[20px] md:text-[28px] font-bold font-['Cormorant_Garamond'] text-black mb-8 md:mb-12 uppercase">
                                     SƠ MI CỔ ÁO SÁNG CHẾ TgC – DẤU ÁN CỦA PHONG CÁCH VÀ ĐẲNG CẤP
