@@ -66,6 +66,12 @@ const ProductDetail = () => {
     const [activeTab, setActiveTab] = useState('shirt');
     const [isDescOpen, setIsDescOpen] = useState(false);
     const data = productData[activeTab];
+    const [currentImage, setCurrentImage] = useState(data.mainImage);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    React.useEffect(() => {
+        setCurrentImage(data.mainImage);
+    }, [activeTab]);
 
     return (
         <>
@@ -98,11 +104,14 @@ const ProductDetail = () => {
                     </div>
 
                     {/* Main Photo Frame */}
-                    <div className="bg-[#EBEBEB] w-full aspect-[440/544] mb-6 flex items-center justify-center p-4">
+                    <div 
+                        className="bg-[#EBEBEB] w-full aspect-[440/544] mb-6 flex items-center justify-center p-4 cursor-pointer"
+                        onDoubleClick={() => setIsPopupOpen(true)}
+                    >
                         <img
-                            src={data.mainImage}
+                            src={currentImage}
                             alt={data.title}
-                            className={`w-full h-full ${activeTab === 'shirt' ? 'object-cover' : 'object-contain'}`}
+                            className={`w-full h-full ${activeTab === 'shirt' ? 'object-cover' : 'object-contain'} transition-all duration-300`}
                         />
                     </div>
 
@@ -115,8 +124,13 @@ const ProductDetail = () => {
 
                         <div className="flex gap-4 w-full overflow-x-auto no-scrollbar">
                             {data.thumbnails.map((img, idx) => (
-                                <div key={idx} className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] border border-[#CCD8E0] shrink-0 bg-white">
-                                    <img src={img} alt="" className="w-full h-full object-cover" />
+                                <div 
+                                    key={idx} 
+                                    className={`w-[80px] h-[80px] md:w-[100px] md:h-[100px] border shrink-0 bg-white cursor-pointer hover:border-[#002D58] transition-all ${currentImage === img ? 'border-[#002D58]' : 'border-[#CCD8E0]'}`}
+                                    onClick={() => setCurrentImage(img)}
+                                    onDoubleClick={() => {setCurrentImage(img); setIsPopupOpen(true);}}
+                                >
+                                    <img src={img} alt="" className="w-full h-full object-cover" /> 
                                 </div>
                             ))}
                         </div>
@@ -133,7 +147,12 @@ const ProductDetail = () => {
                     {/* Top Small Detail Images - Pushed down to align with top of Main Photo */}
                     <div className="flex gap-4 md:gap-10 mb-8 md:mb-12 mt-4 lg:mt-[88px] overflow-x-auto pb-2">
                         {data.detailImages.map((img, idx) => (
-                            <div key={idx} className="w-[120px] h-[160px] md:w-[180px] md:h-[240px] border-2 border-[#88D1FF] shadow-[0_4px_10px_rgba(0,0,0,0.15)] bg-white p-[2px] shrink-0">
+                            <div 
+                                key={idx} 
+                                className={`w-[120px] h-[160px] md:w-[180px] md:h-[240px] border-2 shadow-[0_4px_10px_rgba(0,0,0,0.15)] bg-white p-[2px] shrink-0 cursor-pointer hover:border-[#002D58] transition-all ${currentImage === img ? 'border-[#002D58]' : 'border-[#88D1FF]'}`}
+                                onClick={() => setCurrentImage(img)}
+                                onDoubleClick={() => {setCurrentImage(img); setIsPopupOpen(true);}}
+                            >
                                 <img src={img} alt="" className="w-full h-full object-cover" />
                             </div>
                         ))}
@@ -341,6 +360,51 @@ const ProductDetail = () => {
                     </div>
                 )}
             </div>
+
+            {/* Image Popup / Lightbox */}
+            {isPopupOpen && (
+                <div 
+                    className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-in fade-in duration-300"
+                    onClick={() => setIsPopupOpen(false)}
+                >
+                    <button 
+                        onClick={() => setIsPopupOpen(false)}
+                        className="absolute top-4 right-4 text-white hover:text-gray-300 z-50 transition-colors bg-white/10 rounded-full p-2"
+                        title="Đóng"
+                    >
+                        <span className="material-symbols-outlined text-4xl">close</span>
+                    </button>
+
+                    <div 
+                        className="w-full h-full flex flex-col items-center justify-between gap-4 py-4"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Main Popup Image */}
+                        <div className="flex-1 w-full flex items-center justify-center overflow-hidden px-4">
+                            <img 
+                                src={currentImage} 
+                                alt="Zoomed View" 
+                                className="max-w-full max-h-full object-contain select-none shadow-2xl rounded-lg"
+                            />
+                        </div>
+
+                        {/* Thumbnails Slider for Popup */}
+                        <div className="h-[80px] md:h-[100px] w-full max-w-[90vw] shrink-0 overflow-x-auto no-scrollbar">
+                            <div className="flex justify-start md:justify-center min-w-full gap-2 md:gap-4 h-full pb-2 px-4">
+                                {[data.mainImage, ...data.detailImages, ...data.thumbnails].map((img, idx) => (
+                                     <div 
+                                        key={`popup-thumb-${idx}`}
+                                        className={`h-full aspect-square border-2 shrink-0 cursor-pointer transition-all rounded-sm overflow-hidden bg-white ${currentImage === img ? 'border-white opacity-100 ring-2 ring-white/50' : 'border-transparent opacity-50 hover:opacity-100'}`}
+                                        onClick={() => setCurrentImage(img)}
+                                    >
+                                        <img src={img} alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <UserGuide activeTab={activeTab} />
             <Reviews />

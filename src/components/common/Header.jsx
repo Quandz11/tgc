@@ -29,14 +29,14 @@ const Header = ({ onNavigate }) => {
         </nav>
 
         {/* Auth Buttons */}
-        <div className="hidden sm:flex ml-auto items-center space-x-4 self-center">
+        {/* <div className="hidden sm:flex ml-auto items-center space-x-4 self-center">
           <button className="bg-white text-primary px-5 py-2 rounded-[4px] text-[13px] font-bold hover:bg-gray-100 transition shadow-sm">
             Đăng nhập
           </button>
           <button className="border border-white/40 text-white px-5 py-2 rounded-[4px] text-[13px] font-bold hover:bg-white/10 transition">
             Đăng ký
           </button>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button box*/}
         <button 
@@ -53,10 +53,10 @@ const Header = ({ onNavigate }) => {
            <a onClick={(e) => handleNavClick('home', e)} className="block text-white py-2 hover:bg-white/10" href="#">Trang chủ</a>
            <a onClick={(e) => handleNavClick('product', e)} className="block text-white py-2 hover:bg-white/10" href="#">Sản phẩm</a>
            <a onClick={(e) => handleNavClick('about', e)} className="block text-white py-2 hover:bg-white/10" href="#">Về chúng tôi</a>
-           <div className="flex flex-col gap-2 pt-2">
+           {/* <div className="flex flex-col gap-2 pt-2">
              <button className="bg-white text-primary px-4 py-2 rounded text-xs font-bold uppercase w-full">Đăng nhập</button>
              <button className="border border-white text-white px-4 py-2 rounded text-xs font-bold uppercase w-full">Đăng ký</button>
-           </div>
+           </div> */}
         </div>
       )}
     </header>

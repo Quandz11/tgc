@@ -4,9 +4,13 @@ import mrTuanImg from '../assets/tg-1.png';
 import tg2 from '../assets/tg-2.png';
 import tg3 from '../assets/tg-3.png';
 import banner from '../assets/banner-about.png';
-import mainImage from '../assets/main-image.png';
-import collarDetail from '../assets/collar.png';
+import aboutb1 from '../assets/about-b1.png';
+import aboutb2 from '../assets/about-b2.png';
 import about3 from '../assets/about-3.png';
+import aboutc from '../assets/about-c.png';
+import aboutt from '../assets/about-t.png';
+
+
 
 
 const AboutPage = ({ onNavigate }) => {
@@ -83,7 +87,7 @@ const AboutPage = ({ onNavigate }) => {
                 {/* Image with blue shadow */}
                 <div className="relative">
                     <div className="absolute inset-0 bg-[#002D58] translate-x-4 translate-y-4 rounded-lg"></div>
-                    <img src={banner} alt="Vision" className="relative w-full h-[250px] object-cover rounded-lg border border-gray-200" />
+                    <img src={aboutb2} alt="Vision" className="relative w-full h-[250px] object-cover rounded-lg border border-gray-200" />
                 </div>
             </div>
 
@@ -91,7 +95,7 @@ const AboutPage = ({ onNavigate }) => {
             <div className="space-y-12">
                 <div className="relative">
                     <div className="absolute inset-0 bg-[#002D58] -translate-x-4 translate-y-4 rounded-lg"></div>
-                    <img src={banner} alt="Mission" className="relative w-full h-[250px] object-cover rounded-lg border border-gray-200" />
+                    <img src={aboutb1} alt="Mission" className="relative w-full h-[250px] object-cover rounded-lg border border-gray-200" />
                 </div>
                 <div>
                      <h4 className="font-bold font-['Cormorant_Garamond'] text-[20px] mb-4  italic">"Sứ mệnh"</h4>
@@ -125,7 +129,7 @@ const AboutPage = ({ onNavigate }) => {
             {/* Left Column */}
             <div className="flex flex-col gap-8 md:gap-12">
                 <div className="w-full aspect-[1.4/1] bg-white rounded-[20px] md:rounded-[40px] border border-gray-300 overflow-hidden">
-                    <img src={collarDetail} alt="Collar Detail" className="w-full h-full object-cover" />
+                    <img src={aboutc} alt="Collar Detail" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-[20px] md:text-[24px] font-bold text-[#002D58] font-['Quicksand'] max-w-[400px] leading-tight">
                     Cổ áo TgC – Biểu tượng của sự chỉn chu, phong độ và đẳng cấp
@@ -145,7 +149,7 @@ const AboutPage = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="w-full aspect-[1.6/1] bg-white rounded-[30px] md:rounded-[50px] border border-gray-300 overflow-hidden">
-                    <img src={mainImage} alt="Cuff Detail" className="w-full h-full object-cover" />
+                    <img src={aboutt} alt="Cuff Detail" className="w-full h-full object-cover" />
                 </div>
             </div>
         </div>
@@ -185,8 +189,8 @@ const AboutPage = ({ onNavigate }) => {
         </div>
 
         <div className="space-y-8">
-             <img src={banner} alt="Full Team" className="w-full h-auto rounded-3xl shadow-xl" />
-             <img src={banner} alt="Full Team 2" className="w-full h-auto rounded-3xl shadow-xl" />
+             <img src={aboutb2} alt="Full Team" className="w-full h-auto rounded-3xl shadow-xl" />
+             <img src={aboutb1} alt="Full Team 2" className="w-full h-auto rounded-3xl shadow-xl" />
         </div>
       </section>
 
