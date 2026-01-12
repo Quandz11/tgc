@@ -7,10 +7,10 @@ import Membership from '../home/Membership';
 import shirtPocketMain from '../../assets/owen/main-shirt-pocket.png';
 import shirtPocketDetail1 from '../../assets/owen/detail-shirt-pocket-1.png';
 import shirtPocketDetail2 from '../../assets/owen/detail-shirt-pocket-2.png';
-import shirtPocketThumb1 from '../../assets/owen/thumb-shirt-pocket-1.png';
-import shirtPocketThumb2 from '../../assets/owen/thumb-shirt-pocket-2.png';
-import shirtPocketThumb3 from '../../assets/owen/thumb-shirt-pocket-3.png';
-import shirtPocketThumb4 from '../../assets/owen/thumb-shirt-pocket-4.png';
+import shirtPocketThumb1 from '../../assets/owen/Thumnail1.png';
+import shirtPocketThumb2 from '../../assets/owen/Thumnail2.png';
+import shirtPocketThumb3 from '../../assets/owen/Thumnail3.png';
+import shirtPocketThumb4 from '../../assets/owen/Thumnail4.png';
 import shirtPocketDes1 from '../../assets/owen/des-shirt-pocket-1.png';
 import shirtPocketDes2 from '../../assets/owen/des-shirt-pocket-2.png';
 import shirtPocketDes3 from '../../assets/owen/des-shirt-pocket-3.png';
@@ -218,7 +218,7 @@ const ProductDetail = () => {
                                     onClick={() => setCurrentImage(img)}
                                     onDoubleClick={() => {setCurrentImage(img); setIsPopupOpen(true);}}
                                 >
-                                    <img src={img} alt="" className="w-full h-full object-cover" /> 
+                                    <img src={img} alt="" className="w-full h-full object-contain p-1" /> 
                                 </div>
                             ))}
                         </div>
