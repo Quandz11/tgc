@@ -93,16 +93,16 @@ const productData = {
             "Đường may mũi chỉ hoàn mỹ, tinh tế đến từng chi tiết."
         ],
         highlight: "Tổng thể tạo nên một chiếc áo sang trọng - hào hoa - lịch lãm, giúp Quý Ông khẳng định dấu ấn riêng biệt về tư duy, phong cách và đẳng cấp đỉnh cao.",
-        mainImage: shirtNoPocketMain,
+       mainImage: shirtPocketMain,
         detailImages: [
-            shirtNoPocketDetail1,
-            shirtNoPocketDetail2
+            shirtPocketDetail1,
+            shirtPocketDetail2
         ],
         thumbnails: [
-            shirtNoPocketMain, shirtNoPocketThumb1, shirtNoPocketThumb2, shirtNoPocketThumb3, shirtNoPocketThumb4
+            shirtPocketMain, shirtPocketThumb1, shirtPocketThumb2, shirtPocketThumb3, shirtPocketThumb4
         ],
         descriptionImages: [
-            shirtNoPocketDes1, shirtNoPocketDes2, shirtNoPocketDes3, shirtNoPocketDes4
+            shirtPocketDes1, shirtPocketDes2, shirtPocketDes3, shirtPocketDes4
         ]
     }
 };
