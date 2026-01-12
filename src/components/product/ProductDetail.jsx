@@ -2,33 +2,43 @@ import React, { useState } from 'react';
 import UserGuide from './UserGuide';
 import Reviews from './Reviews';
 import Membership from '../home/Membership';
-import mainImage from '../../assets/main-image.png';
-import mainImagek from '../../assets/main-k.png';
-import mainCollar from '../../assets/main-collar.png';
-import fullShirt from '../../assets/full-shirt.png';
-import fullShirtk from '../../assets/side-1.png';
-import fullCollar from '../../assets/full-collar.png';
-import collarDetail from '../../assets/collar.png';
-import collarDetailk from '../../assets/side-2.png';
-import collar2 from '../../assets/second-collar.png';
-import t1 from '../../assets/t1.png';
-import t2 from '../../assets/t2.png';
-import t3 from '../../assets/t3.png';
-import t4 from '../../assets/t4.png';
-import t1k from '../../assets/thum-1-k.png';
-import t2k from '../../assets/thum-2-k.png';
-import t3k from '../../assets/thum-3-k.png';
-import t4k from '../../assets/thum-4-k.png';
-import ct1 from '../../assets/collar-t1.png';
-import ct2 from '../../assets/collar-t2.png';
-import ct3 from '../../assets/collar-t3.png';
-import ct4 from '../../assets/collar-t4.png';
-import des1 from '../../assets/des1.png';
-import des2 from '../../assets/des2.png';
-import des3 from '../../assets/des3.png';
-import des4 from '../../assets/des4.png';
-import cdes1 from '../../assets/c-des1.png';
-import cdes2 from '../../assets/c-des2.png';
+
+// Shirt Pocket
+import shirtPocketMain from '../../assets/owen/main-shirt-pocket.png';
+import shirtPocketDetail1 from '../../assets/owen/detail-shirt-pocket-1.png';
+import shirtPocketDetail2 from '../../assets/owen/detail-shirt-pocket-2.png';
+import shirtPocketThumb1 from '../../assets/owen/thumb-shirt-pocket-1.png';
+import shirtPocketThumb2 from '../../assets/owen/thumb-shirt-pocket-2.png';
+import shirtPocketThumb3 from '../../assets/owen/thumb-shirt-pocket-3.png';
+import shirtPocketThumb4 from '../../assets/owen/thumb-shirt-pocket-4.png';
+import shirtPocketDes1 from '../../assets/owen/des-shirt-pocket-1.png';
+import shirtPocketDes2 from '../../assets/owen/des-shirt-pocket-2.png';
+import shirtPocketDes3 from '../../assets/owen/des-shirt-pocket-3.png';
+import shirtPocketDes4 from '../../assets/owen/des-shirt-pocket-4.png';
+
+// Shirt No Pocket
+import shirtNoPocketMain from '../../assets/owen/main-shirt-nopocket.png';
+import shirtNoPocketDetail1 from '../../assets/owen/detail-shirt-nopocket-1.png';
+import shirtNoPocketDetail2 from '../../assets/owen/detail-shirt-nopocket-2.png';
+import shirtNoPocketThumb1 from '../../assets/owen/thumb-shirt-nopocket-1.png';
+import shirtNoPocketThumb2 from '../../assets/owen/thumb-shirt-nopocket-2.png';
+import shirtNoPocketThumb3 from '../../assets/owen/thumb-shirt-nopocket-3.png';
+import shirtNoPocketThumb4 from '../../assets/owen/thumb-shirt-nopocket-4.png';
+import shirtNoPocketDes1 from '../../assets/owen/des-shirt-nopocket-1.png';
+import shirtNoPocketDes2 from '../../assets/owen/des-shirt-nopocket-2.png';
+import shirtNoPocketDes3 from '../../assets/owen/des-shirt-nopocket-3.png';
+import shirtNoPocketDes4 from '../../assets/owen/des-shirt-nopocket-4.png';
+
+// Collar
+import collarMain from '../../assets/owen/main-collar.png';
+import collarDetail1 from '../../assets/owen/detail-collar-1.png';
+import collarDetail2 from '../../assets/owen/detail-collar-2.png';
+import collarThumb1 from '../../assets/owen/thumb-collar-1.png';
+import collarThumb2 from '../../assets/owen/thumb-collar-2.png';
+import collarThumb3 from '../../assets/owen/thumb-collar-3.png';
+import collarThumb4 from '../../assets/owen/thumb-collar-4.png';
+import collarDes1 from '../../assets/owen/des-collar-2.png';
+import collarDes2 from '../../assets/owen/des-collar-1.png';
 
 
 const productData = {
@@ -41,13 +51,16 @@ const productData = {
             "Đường may mũi chỉ hoàn mỹ, tinh tế đến từng chi tiết."
         ],
         highlight: "Tổng thể tạo nên một chiếc áo sang trọng - hào hoa - lịch lãm, giúp Quý Ông khẳng định dấu ấn riêng biệt về tư duy, phong cách và đẳng cấp đỉnh cao.",
-        mainImage: mainImage,
+        mainImage: shirtPocketMain,
         detailImages: [
-            fullShirt,
-            collarDetail
+            shirtPocketDetail1,
+            shirtPocketDetail2
         ],
         thumbnails: [
-        t4, t3, t2, t1
+            shirtPocketThumb1, shirtPocketThumb2, shirtPocketThumb3, shirtPocketThumb4
+        ],
+        descriptionImages: [
+            shirtPocketDes1, shirtPocketDes2, shirtPocketDes3, shirtPocketDes4
         ]
     },
     collar: {
@@ -59,13 +72,16 @@ const productData = {
             "Dễ dàng thay đổi phong cách với các loại cổ khác nhau."
         ],
         highlight: "Giải pháp thông minh giúp áo luôn mới, tiết kiệm chi phí và thời gian giặt ủi. Sự kết hợp hoàn hảo giữa công năng và thẩm mỹ.",
-        mainImage: mainCollar,
+        mainImage: collarMain,
         detailImages: [
-            fullCollar,
-            collar2
+            collarDetail1,
+            collarDetail2
         ],
         thumbnails: [
-            ct1, ct2, ct3, ct4
+            collarThumb1, collarThumb2, collarThumb3, collarThumb4
+        ],
+        descriptionImages: [
+            collarDes1, collarDes2
         ]
     },
     shirt_no_pocket: {
@@ -77,13 +93,16 @@ const productData = {
             "Đường may mũi chỉ hoàn mỹ, tinh tế đến từng chi tiết."
         ],
         highlight: "Tổng thể tạo nên một chiếc áo sang trọng - hào hoa - lịch lãm, giúp Quý Ông khẳng định dấu ấn riêng biệt về tư duy, phong cách và đẳng cấp đỉnh cao.",
-        mainImage:  mainImagek,
+        mainImage: shirtNoPocketMain,
         detailImages: [
-            fullShirtk,
-            collarDetailk
+            shirtNoPocketDetail1,
+            shirtNoPocketDetail2
         ],
         thumbnails: [
-            t4k, t3k, t2k, t1k
+            shirtNoPocketThumb1, shirtNoPocketThumb2, shirtNoPocketThumb3, shirtNoPocketThumb4
+        ],
+        descriptionImages: [
+            shirtNoPocketDes1, shirtNoPocketDes2, shirtNoPocketDes3, shirtNoPocketDes4
         ]
     }
 };
@@ -331,7 +350,7 @@ const ProductDetail = () => {
 
                                 <div className="space-y-16 flex flex-col items-center">
                                     <div className="w-full flex justify-center">
-                                        <img src={des1} alt="Full Shirt" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={data.descriptionImages[0]} alt="Full Shirt" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
 
                                     <div className="w-full">
@@ -339,7 +358,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Phom dáng chuẩn Quốc tế:</span> Tỉ lệ hoàn hảo, tôn dáng người mặc, mang lại vẻ ngoài tự tin và khí chất sang trọng trong mọi hoàn cảnh.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des2} alt="Collar" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={data.descriptionImages[1]} alt="Collar" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
 
@@ -348,7 +367,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Chất liệu cao cấp:</span> Vải mềm mại, co giãn nhẹ, thoáng khí, thấm hút mồ hôi tốt – giúp bạn luôn thoải mái, chỉn chu suốt ngày dài.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des3} alt="Fabric" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={data.descriptionImages[2]} alt="Fabric" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
 
@@ -357,7 +376,7 @@ const ProductDetail = () => {
                                             <span className="font-bold">* Từng đường kim mũi chỉ tinh xảo:</span> Gia công tỉ mỉ đến từng chi tiết, thể hiện tay nghề và tiêu chuẩn hoàn mỹ của thương hiệu TgC.
                                         </p>
                                         <div className="flex justify-center">
-                                            <img src={des4} alt="Cuff" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                            <img src={data.descriptionImages[3]} alt="Cuff" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                         </div>
                                     </div>
                                 </div>
@@ -406,14 +425,14 @@ const ProductDetail = () => {
 
                                 <div className="flex flex-col items-center gap-8 md:gap-16">
                                     <div className="w-full flex justify-center">
-                                        <img src={cdes1} alt="Collar Detail 1" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={data.descriptionImages[0]} alt="Collar Detail 1" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
 
                                     <p className="text-[16px] leading-relaxed max-w-[800px]">
                                         Cổ áo được tích hợp vành nhựa định hình cùng hai miếng chống cong vênh, giúp cổ luôn thẳng, phẳng, không bị xô lệch dù mặc lâu hay di chuyển nhiều. Người mặc chỉ cần lồng vành nhựa vào cổ áo khi sử dụng và rút ra khi giặt – thao tác đơn giản nhưng mang lại hiệu quả giữ form tuyệt đối.                                    </p>
 
                                     <div className="w-full flex justify-center">
-                                        <img src={cdes2} alt="Collar Detail 2" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
+                                        <img src={data.descriptionImages[1]} alt="Collar Detail 2" className="w-full max-w-[600px] h-auto border border-gray-100 shadow-sm" />
                                     </div>
                                 </div>
 
