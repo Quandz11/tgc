@@ -57,7 +57,7 @@ const productData = {
             shirtPocketDetail2
         ],
         thumbnails: [
-            shirtPocketThumb1, shirtPocketThumb2, shirtPocketThumb3, shirtPocketThumb4
+            shirtPocketMain, shirtPocketThumb1, shirtPocketThumb2, shirtPocketThumb3, shirtPocketThumb4
         ],
         descriptionImages: [
             shirtPocketDes1, shirtPocketDes2, shirtPocketDes3, shirtPocketDes4
@@ -78,7 +78,7 @@ const productData = {
             collarDetail2
         ],
         thumbnails: [
-            collarThumb1, collarThumb2, collarThumb3, collarThumb4
+            collarMain, collarThumb1, collarThumb2, collarThumb3, collarThumb4
         ],
         descriptionImages: [
             collarDes1, collarDes2
@@ -99,7 +99,7 @@ const productData = {
             shirtNoPocketDetail2
         ],
         thumbnails: [
-            shirtNoPocketThumb1, shirtNoPocketThumb2, shirtNoPocketThumb3, shirtNoPocketThumb4
+            shirtNoPocketMain, shirtNoPocketThumb1, shirtNoPocketThumb2, shirtNoPocketThumb3, shirtNoPocketThumb4
         ],
         descriptionImages: [
             shirtNoPocketDes1, shirtNoPocketDes2, shirtNoPocketDes3, shirtNoPocketDes4
@@ -114,10 +114,36 @@ const ProductDetail = () => {
     const data = productData[activeTab];
     const [currentImage, setCurrentImage] = useState(data.mainImage);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [startIndex, setStartIndex] = useState(0);
+
+    // Calculate visible thumbnails: exclude mainImage if it is currently displayed
+    const visibleThumbnails = currentImage === data.mainImage
+        ? data.thumbnails.filter(img => img !== data.mainImage)
+        : data.thumbnails;
 
     React.useEffect(() => {
         setCurrentImage(data.mainImage);
+        setStartIndex(0);
     }, [activeTab]);
+
+    // Reset startIndex if we switch to main image (list shrinks)
+    React.useEffect(() => {
+        if (currentImage === data.mainImage) {
+            setStartIndex(0);
+        }
+    }, [currentImage, data.mainImage]);
+
+    const handlePrev = () => {
+        if (startIndex > 0) {
+            setStartIndex(startIndex - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (startIndex < visibleThumbnails.length - 4) {
+            setStartIndex(startIndex + 1);
+        }
+    };
 
     return (
         <>
@@ -206,12 +232,16 @@ const ProductDetail = () => {
                     {/* Thumbnails with Arrows */}
                     <div className="relative flex items-center gap-2 group">
                         {/* Left Arrow */}
-                        <button className="absolute left-[-10px] z-10 w-8 h-8 flex items-center justify-center bg-transparent">
+                        <button 
+                            className={`absolute left-[-10px] z-10 w-8 h-8 flex items-center justify-center bg-transparent ${startIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
+                            onClick={handlePrev}
+                            disabled={startIndex === 0}
+                        >
                             <span className="material-symbols-outlined text-[40px] font-bold">chevron_left</span>
                         </button>
 
-                        <div className="flex gap-4 w-full overflow-x-auto no-scrollbar">
-                            {data.thumbnails.map((img, idx) => (
+                        <div className="flex gap-4 w-full overflow-hidden">
+                            {visibleThumbnails.slice(startIndex, startIndex + 4).map((img, idx) => (
                                 <div 
                                     key={idx} 
                                     className={`w-[80px] h-[80px] md:w-[100px] md:h-[100px] border shrink-0 bg-white cursor-pointer hover:border-[#002D58] transition-all ${currentImage === img ? 'border-[#002D58]' : 'border-[#CCD8E0]'}`}
@@ -224,7 +254,11 @@ const ProductDetail = () => {
                         </div>
 
                         {/* Right Arrow */}
-                        <button className="absolute right-[-10px] z-10 w-8 h-8 flex items-center justify-center bg-transparent">
+                        <button 
+                            className={`absolute right-[-10px] z-10 w-8 h-8 flex items-center justify-center bg-transparent ${startIndex >= visibleThumbnails.length - 4 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
+                            onClick={handleNext}
+                            disabled={startIndex >= visibleThumbnails.length - 4}
+                        >
                             <span className="material-symbols-outlined text-[40px] font-bold">chevron_right</span>
                         </button>
                     </div>

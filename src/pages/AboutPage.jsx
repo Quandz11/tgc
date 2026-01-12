@@ -4,7 +4,7 @@ import mrTuanImg from '../assets/tg-1.png';
 import tg2 from '../assets/tg-2.png';
 import tg3 from '../assets/tg-3.png';
 import banner from '../assets/banner-about.png';
-import aboutb1 from '../assets/about-b1.png';
+import aboutb1 from '../assets/banner.png';
 import aboutb2 from '../assets/about-b2.png';
 import about3 from '../assets/about-3.png';
 import aboutc from '../assets/about-c.png';
