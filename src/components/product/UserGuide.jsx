@@ -84,8 +84,8 @@ const UserGuide = ({ activeTab }) => {
         <div className="mt-12 md:mt-24 border-t border-gray-100 pt-8">
             <div className="mb-6 md:mb-12 flex items-center justify-between px-4 md:px-0">
                 <h2 className="text-xl md:text-[28px] font-bold text-[#002D58] font-['Cormorant_Garamond'] uppercase tracking-wider">
-                    Hướng dẫn sử dụng
-                </h2>
+                  <span className="font-['Times_New_Roman'] font-black inline-block align-baseline opacity-85">
+                                        07</span> ĐIỂM VƯỢT TRỘI CỦA CỔ ÁO SÁNG CHẾ TGC                </h2>
                 <div className="flex gap-2 md:gap-4">
                     <button
                         onClick={() => scroll('left')}

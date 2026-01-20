@@ -1,16 +1,32 @@
 // src/components/home/Hero.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import heroBanner from '../../assets/banner.png';
+import heroBanner2 from '../../assets/banner2.png';
 
 const Hero = () => {
+  const [currentBanner, setCurrentBanner] = useState(0);
+  const banners = [heroBanner, heroBanner2];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
+    }, 5000); // Change every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative bg-[#F8F9FA] pb-10">
-      <div className="w-full relative">
-        <img 
-            alt="Men in white shirts standing in a row" 
-            className="w-full h-auto object-cover min-h-[250px] md:min-h-[400px]" 
-            src={heroBanner} 
-        />
+      <div className="w-full relative overflow-hidden">
+        <div className="flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${currentBanner * 100}%)` }}>
+          {banners.map((banner, index) => (
+            <img 
+              key={index}
+              alt={`Hero banner ${index + 1}`}
+              className="w-full h-auto object-contain min-h-[250px] md:min-h-[400px] flex-shrink-0" 
+              src={banner} 
+            />
+          ))}
+        </div>
       </div>
       
       {/* Title Section with Decorative Lines */}

@@ -64,7 +64,7 @@ const productData = {
         ]
     },
     collar: {
-        title: "PHỤ KIỆN CỔ ÁO THÁO RỜI (SÁNG CHẾ ĐỘC QUYỀN)",
+        title: "07 ĐIỂM VƯỢT TRỘI CỦA CỔ ÁO SÁNG CHẾ TGC",
         price: "150.000 VNĐ",
         features: [
             "Thiết kế tháo rời độc đáo, tiện lợi khi giặt ủi.",
@@ -282,7 +282,14 @@ const ProductDetail = () => {
 
                         {/* Product Title */}
                         <h1 className="text-[28px] font-bold text-[#002D58] mb-6 leading-tight uppercase font-['Cormorant_Garamond']">
-                            {data.title}
+                            {activeTab === 'collar' ? (
+                                <>
+                                    <span className="font-['Times_New_Roman'] font-black inline-block align-baseline opacity-85">
+                                        07</span> ĐIỂM VƯỢT TRỘI CỦA CỔ ÁO SÁNG CHẾ TGC
+                                </>
+                            ) : (
+                                data.title
+                            )}
                         </h1>
 
                         {/* Features List */}
@@ -365,8 +372,7 @@ const ProductDetail = () => {
                             {activeTab.startsWith('shirt') ? (
                                 <div className="max-w-[1000px] mx-auto">
                                     <h2 className="text-center text-[20px] md:text-[28px] font-bold font-['Cormorant_Garamond'] text-black mb-8 md:mb-12 uppercase">
-                                        SƠ MI CỔ ÁO SÁNG CHẾ TgC – DẤU ẤN CỦA PHONG CÁCH VÀ ĐẲNG CẤP
-                                    </h2>
+                                        CỔ ÁO SÁNG CHẾ TgC – CHUẨN FORM, GIỮ PHONG CÁCH SANG TRỌNG                                    </h2>
 
                                     <p className="font-bold text-[18px] mb-4 font-['Quicksand']">Thông tin chi tiết sơ mi:</p>
                                     <p className="mb-4 text-[16px] font-['Quicksand']">Sản phẩm áo sơ mi có cổ sáng chế TgC được thiết kế với:</p>
