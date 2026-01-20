@@ -29,7 +29,7 @@ const UserGuide = ({ activeTab }) => {
         { id: 6, img: step6sm },
         { id: 7, img: step7sm },
     ];
-    
+
     const collarSteps = [
         { id: 1, img: step1c },
         { id: 2, img: step2c },
@@ -87,13 +87,13 @@ const UserGuide = ({ activeTab }) => {
                     Hướng dẫn sử dụng
                 </h2>
                 <div className="flex gap-2 md:gap-4">
-                    <button 
+                    <button
                         onClick={() => scroll('left')}
                         className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#002D58] text-[#002D58] flex items-center justify-center hover:bg-[#002D58] hover:text-white transition-colors"
                     >
                         <span className="material-symbols-outlined text-xl md:text-2xl">chevron_left</span>
                     </button>
-                    <button 
+                    <button
                         onClick={() => scroll('right')}
                         className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#002D58] text-[#002D58] flex items-center justify-center hover:bg-[#002D58] hover:text-white transition-colors"
                     >
@@ -102,7 +102,7 @@ const UserGuide = ({ activeTab }) => {
                 </div>
             </div>
 
-            <div 
+            <div
                 ref={sliderRef}
                 className="flex gap-4 md:gap-10 overflow-x-auto pb-6 md:pb-12 no-scrollbar snap-x snap-mandatory h-auto px-4 md:px-0 cursor-grab active:cursor-grabbing select-none"
                 onMouseDown={handleMouseDown}
@@ -114,16 +114,16 @@ const UserGuide = ({ activeTab }) => {
                     <div key={idx} className="min-w-[85vw] md:min-w-[595px] h-[250px] md:h-[320px] rounded-[20px] md:rounded-[30px] overflow-hidden snap-center transition-all duration-500 shadow-xl md:shadow-2xl shrink-0 relative group">
                         {/* Step Number Overlay */}
                         <div className="absolute top-4 right-4 md:top-6 md:right-8 z-10">
-                            <span className="text-red-600 font-black text-[24px] md:text-[32px] drop-shadow-md">
+                            <span className="text-yellow-500 font-black text-[24px] md:text-[32px] drop-shadow-md">
                                 {step.id}
                             </span>
                         </div>
-                        
-                        <img 
-                            src={step.img} 
-                            alt={`${activeTab === 'shirt' ? 'Sơ mi' : 'Cổ áo'} Step ${step.id}`} 
+
+                        <img
+                            src={step.img}
+                            alt={`${activeTab === 'shirt' ? 'Sơ mi' : 'Cổ áo'} Step ${step.id}`}
                             draggable="false"
-                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 select-none" 
+                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 select-none"
                         />
                     </div>
                 ))}
