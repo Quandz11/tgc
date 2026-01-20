@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="space-y-1">
             <h4 className="font-['Cormorant_Garamond'] text-white font-bold text-base uppercase tracking-wide">Công Ty Cổ Phần Giải Pháp TGC</h4>
             <div className="font-['Quicksand'] text-gray-300 text-sm space-y-1 font-light">
-              <p>Email: tgc.ctcp@gmail.com</p>
+              <p>Email: tgc.ctgp@gmail.com</p>
               <p>SDT: 0975 035 688</p>
             </div>
           </div>

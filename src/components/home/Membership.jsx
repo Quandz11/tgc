@@ -7,7 +7,7 @@ const Membership = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="md:w-1/2 text-center md:text-left">
           <h3 className="font-['Cormorant_Garamond'] text-lg md:text-2xl font-bold mb-2 uppercase tracking-wide">ĐĂNG KÝ ĐỂ TRỞ THÀNH HỘI VIÊN</h3>
-          <p className="font-['Quicksand'] text-white text-sm font-light">Gia nhập cộng đồng quý ông TGC – nơi phong thái và sự tinh tế được nâng tầm</p>
+          <p className="font-['Quicksand'] text-white text-sm font-light">Gia nhập cộng đồng quý ông TgC – nơi phong cách và sự tinh tế được nâng tầm</p>
         </div>
         <div className="w-full md:w-[45%]">
             <div className="flex w-full border border-white rounded-[4px] overflow-hidden">
