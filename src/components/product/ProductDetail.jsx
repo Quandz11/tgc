@@ -324,7 +324,7 @@ const ProductDetail = () => {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center gap-4">
+                                    <div className="hidden md:flex items-center gap-4">
                                         <span className="text-[20px] font-bold text-[#333333] font-['Quicksand']">Chia sẻ</span>
                                         <div className="flex gap-3">
                                             <button className="w-[38px] h-[38px] rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:opacity-80 transition-opacity">
